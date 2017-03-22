@@ -1,0 +1,6 @@
+framework module Pods_BoardGameClub {
+  umbrella header "Pods-BoardGameClub-umbrella.h"
+
+  export *
+  module * { export * }
+}

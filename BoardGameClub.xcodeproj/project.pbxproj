@@ -1,0 +1,388 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		7E63103208B1848E10879321 /* Pods_BoardGameClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */; };
+		808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB51E82A22500A525AF /* AppDelegate.swift */; };
+		808E5DB81E82A22500A525AF /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB71E82A22500A525AF /* FirstViewController.swift */; };
+		808E5DBA1E82A22500A525AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB91E82A22500A525AF /* SecondViewController.swift */; };
+		808E5DBD1E82A22500A525AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBB1E82A22500A525AF /* Main.storyboard */; };
+		808E5DBF1E82A22500A525AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBE1E82A22500A525AF /* Assets.xcassets */; };
+		808E5DC21E82A22500A525AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		1A0FAC0D3AA2CD944C328C90 /* Pods-BoardGameClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoardGameClub/Pods-BoardGameClub.release.xcconfig"; sourceTree = "<group>"; };
+		5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoardGameClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		808E5DB21E82A22500A525AF /* BoardGameClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardGameClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		808E5DB51E82A22500A525AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		808E5DB71E82A22500A525AF /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
+		808E5DB91E82A22500A525AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		808E5DBC1E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		808E5DBE1E82A22500A525AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		808E5DC11E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		808E5DC31E82A22500A525AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FC00C56A6BA593521B9B0BA6 /* Pods-BoardGameClub.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameClub.debug.xcconfig"; path = "Pods/Target Support Files/Pods-BoardGameClub/Pods-BoardGameClub.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		808E5DAF1E82A22500A525AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7E63103208B1848E10879321 /* Pods_BoardGameClub.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		808E5DA91E82A22500A525AF = {
+			isa = PBXGroup;
+			children = (
+				808E5DB41E82A22500A525AF /* BoardGameClub */,
+				808E5DB31E82A22500A525AF /* Products */,
+				A95E2E9D0940908CD80F527A /* Pods */,
+				8619247C615312A879E4544C /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		808E5DB31E82A22500A525AF /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				808E5DB21E82A22500A525AF /* BoardGameClub.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		808E5DB41E82A22500A525AF /* BoardGameClub */ = {
+			isa = PBXGroup;
+			children = (
+				808E5DB51E82A22500A525AF /* AppDelegate.swift */,
+				808E5DB71E82A22500A525AF /* FirstViewController.swift */,
+				808E5DB91E82A22500A525AF /* SecondViewController.swift */,
+				808E5DBB1E82A22500A525AF /* Main.storyboard */,
+				808E5DBE1E82A22500A525AF /* Assets.xcassets */,
+				808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */,
+				808E5DC31E82A22500A525AF /* Info.plist */,
+			);
+			path = BoardGameClub;
+			sourceTree = "<group>";
+		};
+		8619247C615312A879E4544C /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		A95E2E9D0940908CD80F527A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				FC00C56A6BA593521B9B0BA6 /* Pods-BoardGameClub.debug.xcconfig */,
+				1A0FAC0D3AA2CD944C328C90 /* Pods-BoardGameClub.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		808E5DB11E82A22500A525AF /* BoardGameClub */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 808E5DC61E82A22500A525AF /* Build configuration list for PBXNativeTarget "BoardGameClub" */;
+			buildPhases = (
+				AD16855CB304DAB12D316788 /* [CP] Check Pods Manifest.lock */,
+				808E5DAE1E82A22500A525AF /* Sources */,
+				808E5DAF1E82A22500A525AF /* Frameworks */,
+				808E5DB01E82A22500A525AF /* Resources */,
+				5F3D97287474DDD1FF914B97 /* [CP] Embed Pods Frameworks */,
+				2A4B367E82D4D7818DA807BE /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BoardGameClub;
+			productName = BoardGameClub;
+			productReference = 808E5DB21E82A22500A525AF /* BoardGameClub.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		808E5DAA1E82A22500A525AF /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = jexwang;
+				TargetAttributes = {
+					808E5DB11E82A22500A525AF = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = YD5TB6T2X8;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 808E5DAD1E82A22500A525AF /* Build configuration list for PBXProject "BoardGameClub" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 808E5DA91E82A22500A525AF;
+			productRefGroup = 808E5DB31E82A22500A525AF /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				808E5DB11E82A22500A525AF /* BoardGameClub */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		808E5DB01E82A22500A525AF /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				808E5DC21E82A22500A525AF /* LaunchScreen.storyboard in Resources */,
+				808E5DBF1E82A22500A525AF /* Assets.xcassets in Resources */,
+				808E5DBD1E82A22500A525AF /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2A4B367E82D4D7818DA807BE /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoardGameClub/Pods-BoardGameClub-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5F3D97287474DDD1FF914B97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-BoardGameClub/Pods-BoardGameClub-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AD16855CB304DAB12D316788 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		808E5DAE1E82A22500A525AF /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				808E5DBA1E82A22500A525AF /* SecondViewController.swift in Sources */,
+				808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */,
+				808E5DB81E82A22500A525AF /* FirstViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXVariantGroup section */
+		808E5DBB1E82A22500A525AF /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				808E5DBC1E82A22500A525AF /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				808E5DC11E82A22500A525AF /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		808E5DC41E82A22500A525AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		808E5DC51E82A22500A525AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		808E5DC71E82A22500A525AF /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = FC00C56A6BA593521B9B0BA6 /* Pods-BoardGameClub.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD5TB6T2X8;
+				INFOPLIST_FILE = BoardGameClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jexwang.BoardGameClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		808E5DC81E82A22500A525AF /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1A0FAC0D3AA2CD944C328C90 /* Pods-BoardGameClub.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = YD5TB6T2X8;
+				INFOPLIST_FILE = BoardGameClub/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jexwang.BoardGameClub;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		808E5DAD1E82A22500A525AF /* Build configuration list for PBXProject "BoardGameClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808E5DC41E82A22500A525AF /* Debug */,
+				808E5DC51E82A22500A525AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		808E5DC61E82A22500A525AF /* Build configuration list for PBXNativeTarget "BoardGameClub" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				808E5DC71E82A22500A525AF /* Debug */,
+				808E5DC81E82A22500A525AF /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 808E5DAA1E82A22500A525AF /* Project object */;
+}
