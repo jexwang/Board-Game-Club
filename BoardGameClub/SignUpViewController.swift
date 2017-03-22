@@ -47,8 +47,17 @@ class SignUpViewController: UIViewController {
                     let alert = UIAlertController(title: "註冊成功", message: "請按確定並登入", preferredStyle: .alert)
                     let alertAction = UIAlertAction(title: "確定", style: .default, handler: { _ in
                         FIRAuth.auth()?.signIn(withEmail: self.emailTextField.text!, password: self.pwTextField.text!, completion: { (user, error) in
+                            UserDefaults.standard.set(self.emailTextField.text, forKey: "email")
+                            UserDefaults.standard.synchronize()
                             self.performSegue(withIdentifier: "SignUpLogin", sender: self)
                         })
+                    })
+                    alert.addAction(alertAction)
+                    self.present(alert, animated: true, completion: nil)
+                } else {
+                    let alert = UIAlertController(title: "錯誤", message: error?.localizedDescription, preferredStyle: .alert)
+                    let alertAction = UIAlertAction(title: "確定", style: .default, handler: { _ in
+                        self.dismiss(animated: true, completion: nil)
                     })
                     alert.addAction(alertAction)
                     self.present(alert, animated: true, completion: nil)

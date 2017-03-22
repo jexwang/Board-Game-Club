@@ -13,6 +13,8 @@
 		808E5DBD1E82A22500A525AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBB1E82A22500A525AF /* Main.storyboard */; };
 		808E5DBF1E82A22500A525AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBE1E82A22500A525AF /* Assets.xcassets */; };
 		808E5DC21E82A22500A525AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */; };
+		80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */; };
+		80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED51E82DFB100470C8F /* AppTemp.swift */; };
 		80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */; };
 		80FFE1E01E82B6320019D6AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */; };
 		80FFE1E31E82B7960019D6AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE1E21E82B7960019D6AB /* LoginViewController.swift */; };
@@ -29,6 +31,8 @@
 		808E5DBE1E82A22500A525AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		808E5DC11E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		808E5DC31E82A22500A525AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewCell.swift; sourceTree = "<group>"; };
+		80E1CED51E82DFB100470C8F /* AppTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTemp.swift; sourceTree = "<group>"; };
 		80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; };
 		80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80FFE1E21E82B7960019D6AB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -69,9 +73,10 @@
 		808E5DB41E82A22500A525AF /* BoardGameClub */ = {
 			isa = PBXGroup;
 			children = (
-				80FFE1E11E82B7760019D6AB /* Login */,
 				808E5DB51E82A22500A525AF /* AppDelegate.swift */,
-				80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */,
+				80E1CED51E82DFB100470C8F /* AppTemp.swift */,
+				80FFE1E11E82B7760019D6AB /* Login */,
+				80E1CED01E82D57000470C8F /* RoomList */,
 				808E5DB91E82A22500A525AF /* SecondViewController.swift */,
 				808E5DBB1E82A22500A525AF /* Main.storyboard */,
 				808E5DBE1E82A22500A525AF /* Assets.xcassets */,
@@ -80,6 +85,15 @@
 				80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */,
 			);
 			path = BoardGameClub;
+			sourceTree = "<group>";
+		};
+		80E1CED01E82D57000470C8F /* RoomList */ = {
+			isa = PBXGroup;
+			children = (
+				80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */,
+				80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */,
+			);
+			name = RoomList;
 			sourceTree = "<group>";
 		};
 		80FFE1E11E82B7760019D6AB /* Login */ = {
@@ -235,8 +249,10 @@
 			files = (
 				80FFE1E31E82B7960019D6AB /* LoginViewController.swift in Sources */,
 				80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */,
+				80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */,
 				808E5DBA1E82A22500A525AF /* SecondViewController.swift in Sources */,
 				808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */,
+				80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */,
 				80FFE1E51E82BC3B0019D6AB /* SignUpViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

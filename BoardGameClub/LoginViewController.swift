@@ -27,7 +27,7 @@ class LoginViewController: UIViewController {
         if let email = userDefaults.string(forKey: "email") {
             emailTextField.text = email
         }
-        pwTextField.text = ""
+//        pwTextField.text = ""
     }
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
