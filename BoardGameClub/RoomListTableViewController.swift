@@ -18,6 +18,7 @@ class RoomListTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         read()
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -86,6 +87,10 @@ class RoomListTableViewController: UITableViewController {
             cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 86400)) 天前建立"
         }
         return cell
+    }
+    
+    @IBAction func backToRoomList(segue: UIStoryboardSegue) {
+        
     }
     
 }
