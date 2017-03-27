@@ -8,22 +8,35 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class RoomListTableViewController: UITableViewController {
     
     let ref = FIRDatabase.database().reference()
     var contentArray: [FIRDataSnapshot] = []
     var snap: FIRDataSnapshot!
+    var firstLoad = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        self.refreshControl = refreshControl
+        
         read()
         
+        SVProgressHUD.show(withStatus: "抓取資料中")
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        refresh()
+    }
+    
+    func refresh() {
+        tableView.reloadData()
+        refreshControl?.endRefreshing()
     }
     
     // MARK: - Firebase load data
@@ -44,14 +57,22 @@ class RoomListTableViewController: UITableViewController {
                 contentArray.append(item as! FIRDataSnapshot)
             }
             ref.child("room").keepSynced(true)
-            OperationQueue.main.addOperation {
-                self.tableView.reloadData()
+            if firstLoad {
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+                firstLoad = false
             }
+            SVProgressHUD.dismiss(withDelay: 1)
         } else {
             contentArray.removeAll()
-            OperationQueue.main.addOperation {
-                self.tableView.reloadData()
+            if firstLoad {
+                OperationQueue.main.addOperation {
+                    self.tableView.reloadData()
+                }
+                firstLoad = false
             }
+            SVProgressHUD.dismiss(withDelay: 1)
         }
     }
 

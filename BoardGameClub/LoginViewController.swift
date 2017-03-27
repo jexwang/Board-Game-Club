@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import SVProgressHUD
 
 class LoginViewController: UIViewController {
 
@@ -15,10 +16,11 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var pwTextField: UITextField!
     
     let userDefaults = UserDefaults.standard
+    let svp = SVProgressHUD()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+//        SVProgressHUD.setDefaultStyle(.dark)
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -40,21 +42,17 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
+            SVProgressHUD.show(withStatus: "登入中")
             FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: pwTextField.text!, completion: { (user, error) in
-                if let userTemp = user {
-                    print(userTemp)
-                }
                 if error == nil {
                     self.view.endEditing(true)
-                    let alert = UIAlertController(title: "登入成功", message: nil, preferredStyle: .alert)
-                    let alertAction = UIAlertAction(title: "確定", style: .default, handler: { _ in
-                        self.userDefaults.set(self.emailTextField.text, forKey: "email")
-                        self.userDefaults.synchronize()
+                    SVProgressHUD.showSuccess(withStatus: "登入成功")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                    Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
                         self.performSegue(withIdentifier: "Login", sender: self)
                     })
-                    alert.addAction(alertAction)
-                    self.present(alert, animated: true, completion: nil)
                 } else {
+                    SVProgressHUD.dismiss()
                     let alert = UIAlertController(title: "錯誤", message: error?.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
@@ -64,6 +62,7 @@ class LoginViewController: UIViewController {
     }
     
     @IBAction func resetPwButton(_ sender: UIButton) {
+        
     }
     
     @IBAction func backToLoginView(segue: UIStoryboardSegue) {
