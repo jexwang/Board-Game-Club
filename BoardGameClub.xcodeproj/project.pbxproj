@@ -13,12 +13,15 @@
 		80601C281E86A376000AD27A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80601C271E86A376000AD27A /* ConfirmViewController.swift */; };
 		806D83E41E8656C400021213 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D83E31E8656C400021213 /* CreateRoomViewController.swift */; };
 		808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB51E82A22500A525AF /* AppDelegate.swift */; };
-		808E5DBA1E82A22500A525AF /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB91E82A22500A525AF /* SecondViewController.swift */; };
 		808E5DBD1E82A22500A525AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBB1E82A22500A525AF /* Main.storyboard */; };
 		808E5DBF1E82A22500A525AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBE1E82A22500A525AF /* Assets.xcassets */; };
 		808E5DC21E82A22500A525AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */; };
+		809E7A031E8CE9E100C7B4A0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809E7A021E8CE9E100C7B4A0 /* MapKit.framework */; };
+		809E7A051E8D055C00C7B4A0 /* InTheRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */; };
+		809E7A071E8D3C8300C7B4A0 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E7A061E8D3C8300C7B4A0 /* Room.swift */; };
 		80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */; };
 		80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED51E82DFB100470C8F /* AppTemp.swift */; };
+		80F743121E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */; };
 		80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */; };
 		80FFE1E01E82B6320019D6AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */; };
 		80FFE1E31E82B7960019D6AB /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE1E21E82B7960019D6AB /* LoginViewController.swift */; };
@@ -34,13 +37,16 @@
 		806D83E31E8656C400021213 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
 		808E5DB21E82A22500A525AF /* BoardGameClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardGameClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		808E5DB51E82A22500A525AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		808E5DB91E82A22500A525AF /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		808E5DBC1E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		808E5DBE1E82A22500A525AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		808E5DC11E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		808E5DC31E82A22500A525AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		809E7A021E8CE9E100C7B4A0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
+		809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheRoomViewController.swift; sourceTree = "<group>"; };
+		809E7A061E8D3C8300C7B4A0 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
 		80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewCell.swift; sourceTree = "<group>"; };
 		80E1CED51E82DFB100470C8F /* AppTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTemp.swift; sourceTree = "<group>"; };
+		80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetailTableViewCell.swift; sourceTree = "<group>"; };
 		80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; };
 		80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		80FFE1E21E82B7960019D6AB /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -53,6 +59,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				809E7A031E8CE9E100C7B4A0 /* MapKit.framework in Frameworks */,
 				7E63103208B1848E10879321 /* Pods_BoardGameClub.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,10 +99,11 @@
 			children = (
 				808E5DB51E82A22500A525AF /* AppDelegate.swift */,
 				80E1CED51E82DFB100470C8F /* AppTemp.swift */,
+				809E7A061E8D3C8300C7B4A0 /* Room.swift */,
 				80FFE1E11E82B7760019D6AB /* Login */,
 				80E1CED01E82D57000470C8F /* RoomList */,
+				80F7430C1E8B914D00E6D70F /* RoomDetail */,
 				80636DB31E8514E8002BEE07 /* CreateRoom */,
-				808E5DB91E82A22500A525AF /* SecondViewController.swift */,
 				80356B381E87D06900145B58 /* InformationViewController.swift */,
 				808E5DBB1E82A22500A525AF /* Main.storyboard */,
 				808E5DBE1E82A22500A525AF /* Assets.xcassets */,
@@ -111,9 +119,18 @@
 			children = (
 				80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */,
 				80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */,
-				80356B3A1E87E9FE00145B58 /* RoomDetailViewController.swift */,
 			);
 			name = RoomList;
+			sourceTree = "<group>";
+		};
+		80F7430C1E8B914D00E6D70F /* RoomDetail */ = {
+			isa = PBXGroup;
+			children = (
+				80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */,
+				80356B3A1E87E9FE00145B58 /* RoomDetailViewController.swift */,
+				809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */,
+			);
+			name = RoomDetail;
 			sourceTree = "<group>";
 		};
 		80FFE1E11E82B7760019D6AB /* Login */ = {
@@ -128,6 +145,7 @@
 		8619247C615312A879E4544C /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				809E7A021E8CE9E100C7B4A0 /* MapKit.framework */,
 				5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */,
 			);
 			name = Frameworks;
@@ -179,6 +197,11 @@
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = YD5TB6T2X8;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -271,13 +294,15 @@
 				80FFE1E31E82B7960019D6AB /* LoginViewController.swift in Sources */,
 				80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */,
 				80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */,
-				808E5DBA1E82A22500A525AF /* SecondViewController.swift in Sources */,
 				80356B3B1E87E9FE00145B58 /* RoomDetailViewController.swift in Sources */,
 				808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */,
 				80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */,
 				806D83E41E8656C400021213 /* CreateRoomViewController.swift in Sources */,
+				809E7A051E8D055C00C7B4A0 /* InTheRoomViewController.swift in Sources */,
 				80FFE1E51E82BC3B0019D6AB /* SignUpViewController.swift in Sources */,
 				80356B391E87D06900145B58 /* InformationViewController.swift in Sources */,
+				80F743121E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift in Sources */,
+				809E7A071E8D3C8300C7B4A0 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

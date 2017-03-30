@@ -14,14 +14,12 @@ class RoomListTableViewController: UITableViewController {
     
     let ref = FIRDatabase.database().reference()
     var contentArray: [FIRDataSnapshot] = []
-    var snap: FIRDataSnapshot!
-    var firstLoad = true
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
         let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action: #selector(refresh), for: .valueChanged)
+        refreshControl.addTarget(self, action: #selector(read), for: .valueChanged)
         self.refreshControl = refreshControl
         
         read()
@@ -31,47 +29,38 @@ class RoomListTableViewController: UITableViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        refresh()
-    }
-    
-    func refresh() {
-        tableView.reloadData()
-        refreshControl?.endRefreshing()
+        read()
     }
     
     // MARK: - Firebase load data
     
     func read() {
-        ref.child("room").observe(.value, with: { (snapShots) in
+        ref.child("room").queryOrdered(byChild: "createTime").observeSingleEvent(of: .value, with: { (snapShots) in
             if snapShots.children.allObjects is [FIRDataSnapshot] {
-                self.snap = snapShots
+                let snap = snapShots
+                self.reload(snap: snap)
             }
-            self.reload(snap: self.snap)
         })
     }
     
     func reload(snap: FIRDataSnapshot) {
         if snap.exists() {
             contentArray.removeAll()
-            for item in snap.children {
+            for item in snap.children.reversed() {
                 contentArray.append(item as! FIRDataSnapshot)
             }
             ref.child("room").keepSynced(true)
-            if firstLoad {
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
-                firstLoad = false
-            }
             SVProgressHUD.dismiss(withDelay: 1)
         } else {
             contentArray.removeAll()
-            if firstLoad {
                 OperationQueue.main.addOperation {
                     self.tableView.reloadData()
+                    self.refreshControl?.endRefreshing()
                 }
-                firstLoad = false
-            }
             SVProgressHUD.dismiss(withDelay: 1)
         }
     }
@@ -90,24 +79,46 @@ class RoomListTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! RoomListTableViewCell
-        let room = contentArray[indexPath.row].value as! Dictionary<String, AnyObject>
-        cell.nameLabel.text = String(describing: room["name"]!)
-        cell.gameLabel.text = String(describing: room["game"]!)
-        cell.dateLabel.text = AppTemp.convertDate(time: room["timePoint"] as! TimeInterval, DateMode: .Date)
-        cell.locationLabel.text = String(describing: room["location"]!)
-        let createTime = Date(timeInterval: room["createTime"] as! TimeInterval / 1000, since: Date(timeIntervalSince1970: 0))
-        let createTimeToNow = Date().timeIntervalSince(createTime)
-        switch createTimeToNow {
-        case 0...59:
-            cell.createTimeLabel.text = "於數秒前建立"
-        case 60...3599:
-            cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 60)) 分鐘前建立"
-        case 3600...86399:
-            cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 3600)) 小時前建立"
-        default:
-            cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 86400)) 天前建立"
+        if let room = contentArray[indexPath.row].value as? Dictionary<String, AnyObject> {
+            cell.nameLabel.text = room["name"] as! String?
+            cell.gameLabel.text = room["game"] as! String?
+            cell.dateLabel.text = AppTemp.convertDate(time: room["timePoint"] as! TimeInterval, DateMode: .Date)
+            cell.locationLabel.text = room["location"] as! String?
+            
+            let createTime = Date(timeInterval: room["createTime"] as! TimeInterval / 1000, since: Date(timeIntervalSince1970: 0))
+            let createTimeToNow = Date().timeIntervalSince(createTime)
+            switch createTimeToNow {
+            case 0...59:
+                cell.createTimeLabel.text = "於數秒前建立"
+            case 60...3599:
+                cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 60)) 分鐘前建立"
+            case 3600...86399:
+                cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 3600)) 小時前建立"
+            default:
+                cell.createTimeLabel.text = "於 \(Int(createTimeToNow / 86400)) 天前建立"
+            }
         }
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let room = contentArray[indexPath.row].value as? Dictionary<String, AnyObject> {
+            let currentPlayer = room["currentPlayer"] as! [String]
+            if currentPlayer.contains(FIRAuth.auth()!.currentUser!.email!) {
+                performSegue(withIdentifier: "Joined", sender: self)
+            } else {
+                performSegue(withIdentifier: "RoomDetail", sender: self)
+            }
+        }
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "RoomDetail" {
+            let indexPath = tableView.indexPathForSelectedRow!
+            let destinationController = segue.destination as! RoomDetailViewController
+            destinationController.roomKey = contentArray[indexPath.row].key
+            destinationController.roomDict = contentArray[indexPath.row].value as! Dictionary<String, AnyObject>
+        }
     }
     
     @IBAction func backToRoomList(segue: UIStoryboardSegue) {

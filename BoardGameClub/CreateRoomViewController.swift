@@ -58,14 +58,18 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     }
 
     func textFieldShouldBeginEditing(_ textField: UITextField) -> Bool {
-        textFieldMaxY = textField.frame.maxY + 10
+        if textField.tag < 6 {
+            textFieldMaxY = textField.frame.maxY + 100
+        } else {
+            textFieldMaxY = textField.frame.maxY + 20
+        }
         switch textField.tag {
-        case 1:
+        case 4:
             datePicker.isHidden = false
             timePicker.isHidden = true
             pickerViewAnimate(mode: .up)
             return false
-        case 2:
+        case 5:
             datePicker.isHidden = true
             timePicker.isHidden = false
             pickerViewAnimate(mode: .up)
@@ -92,6 +96,17 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
                 })
             }
         }
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        let tag = textField.tag
+        if tag < 6 {
+            let nextTextFieldTag = view.viewWithTag(tag + 1) as! UITextField
+            nextTextFieldTag.becomeFirstResponder()
+        } else {
+            next()
+        }
+        return true
     }
     
     func pickerViewInitialize() {
@@ -136,6 +151,10 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
                             self.mainView.bounds.origin.y = 0
                         })
                     }
+                } else {
+                    UIView.animate(withDuration: 0.25, animations: {
+                        self.mainView.bounds.origin.y = 0
+                    })
                 }
                 UIView.animate(withDuration: 0.25, animations: {
                     self.pickerContainer.frame.origin.y -= self.pickerContainer.frame.height
@@ -151,20 +170,24 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     }
     
     func datePickerChanged() {
-        let textField = view.viewWithTag(1) as! UITextField
+        let textField = view.viewWithTag(4) as! UITextField
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd"
         textField.text = formatter.string(from: datePicker.date)
     }
     
     func timePickerChanged() {
-        let textField = view.viewWithTag(2) as! UITextField
+        let textField = view.viewWithTag(5) as! UITextField
         let formatter = DateFormatter()
         formatter.dateFormat = "HH:mm"
         textField.text = formatter.string(from: timePicker.date)
     }
 
     @IBAction func nextButton(_ sender: UIBarButtonItem) {
+        next()
+    }
+    
+    func next() {
         if nameTextField.text == "" || gameTextField.text == "" || playersTextField.text == "" || dateTextField.text == "" || timeTextField.text == "" || locationTextField.text == "" {
             let alert = UIAlertController(title: "錯誤", message: "請輸入完整資訊", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))

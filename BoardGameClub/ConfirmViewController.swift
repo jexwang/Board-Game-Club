@@ -20,7 +20,6 @@ class ConfirmViewController: UIViewController {
     @IBOutlet weak var locationLabel: UILabel!
     
     let ref = FIRDatabase.database().reference()
-//    var roomID: UInt32 = arc4random_uniform(UINT32_MAX)
     var name: String!
     var game: String!
     var players: Int!
@@ -53,16 +52,23 @@ class ConfirmViewController: UIViewController {
         
         let conditionRef = ref.child("room")
         let roomID = conditionRef.childByAutoId()
-        roomID.updateChildValues(["ownerID" : FIRAuth.auth()!.currentUser!.uid])
-        roomID.updateChildValues(["createTime" : FIRServerValue.timestamp()])
-        roomID.updateChildValues(["name" : name])
-        roomID.updateChildValues(["game" : game])
-        roomID.updateChildValues(["players" : players])
-        roomID.updateChildValues(["timePoint" : timePoint!.timeIntervalSince1970])
-        roomID.updateChildValues(["location" : location])
-        
-        SVProgressHUD.showSuccess(withStatus: "建立完成")
-        self.dismiss(animated: true, completion: nil)
+        roomID.setValue(["ownerID" : FIRAuth.auth()!.currentUser!.uid,
+                         "createTime" : FIRServerValue.timestamp(),
+                         "name" : name,
+                         "game" : game,
+                         "players" : players,
+                         "timePoint" : timePoint!.timeIntervalSince1970,
+                         "location" : location,
+                         "currentPlayer" : [
+                            "0" : FIRAuth.auth()!.currentUser!.email]
+            ]) { (error, ref) in
+                if error != nil {
+                    print(error!)
+                } else {
+                    SVProgressHUD.showSuccess(withStatus: "建立完成")
+                    self.dismiss(animated: true, completion: nil)
+                }
+        }
     }
 
 }

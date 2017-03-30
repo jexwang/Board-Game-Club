@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
@@ -16,12 +16,6 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var pwTextField: UITextField!
     
     let userDefaults = UserDefaults.standard
-    let svp = SVProgressHUD()
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-//        SVProgressHUD.setDefaultStyle(.dark)
-    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
@@ -42,20 +36,22 @@ class LoginViewController: UIViewController {
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
+            view.endEditing(true)
             SVProgressHUD.show(withStatus: "登入中")
             FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: pwTextField.text!, completion: { (user, error) in
-                if error == nil {
-                    self.view.endEditing(true)
-                    SVProgressHUD.showSuccess(withStatus: "登入成功")
-                    SVProgressHUD.dismiss(withDelay: 1)
-                    Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
-                        self.performSegue(withIdentifier: "Login", sender: self)
-                    })
-                } else {
+                if error != nil {
                     SVProgressHUD.dismiss()
                     let alert = UIAlertController(title: "錯誤", message: error?.localizedDescription, preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
                     self.present(alert, animated: true, completion: nil)
+                } else {
+                    SVProgressHUD.showSuccess(withStatus: "登入成功")
+                    SVProgressHUD.dismiss(withDelay: 1)
+                    self.userDefaults.set(self.emailTextField.text, forKey: "email")
+                    self.userDefaults.synchronize()
+                    Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+                        self.performSegue(withIdentifier: "Login", sender: self)
+                    })
                 }
             })
         }
