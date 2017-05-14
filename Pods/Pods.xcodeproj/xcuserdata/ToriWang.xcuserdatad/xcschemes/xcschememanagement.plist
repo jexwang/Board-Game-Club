@@ -14,7 +14,27 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>JSQMessagesViewController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>JSQSystemSoundPlayer.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-BoardGameClub.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>Protobuf.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>SDWebImage.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
@@ -27,7 +47,27 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>107A9565F9DF88517DFD3E28C05B2B96</key>
+		<key>6402DED4E5791A380FB846BDE97362BA</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>6D5CEDECD3D8DC52EA507E0431BDA8A0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A866FB96631B24FA119686F44EB2935A</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>AB677A3F7BD2F0CFC15106916514932C</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>BD861836CB1D5F983DDD50352AB2F3CC</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +77,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C9108B7AD2291137BEC1A53B756E77A6</key>
+		<key>C7DCF2B547F7871B9BFD74DE93B0E173</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>E014795A4910CA696A13567EDABE95D2</key>
+		<key>D0581AF7BF4A6DA140D280B19ECC7BFF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

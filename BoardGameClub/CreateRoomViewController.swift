@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     
@@ -18,6 +19,8 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var timeTextField: UITextField!
     @IBOutlet weak var locationTextField: UITextField!
     
+    let centerDefault = NotificationCenter.default
+    var room: Room!
     var datePicker = UIDatePicker()
     var timePicker = UIDatePicker()
     var pickerContainer = UIView()
@@ -37,13 +40,11 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        let centerDefault = NotificationCenter.default
         centerDefault.addObserver(self, selector: #selector(keyboardWillShow), name: Notification.Name.UIKeyboardWillShow, object: nil)
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(true)
-        let centerDefault = NotificationCenter.default
         centerDefault.removeObserver(self)
     }
     
@@ -193,6 +194,7 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
             alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
             present(alert, animated: true, completion: nil)
         } else {
+            room = Room(game: gameTextField.text!, location: locationTextField.text!, name: nameTextField.text!, players: Int(playersTextField.text!)!, timePoint: Library.dateStringToTimeInterval(date: datePicker.date, time: timePicker.date))
             performSegue(withIdentifier: "Confirm", sender: self)
         }
     }
@@ -200,12 +202,7 @@ class CreateRoomViewController: UIViewController, UITextFieldDelegate {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "Confirm" {
             let destinationController = segue.destination as! ConfirmViewController
-            destinationController.name = nameTextField.text
-            destinationController.game = gameTextField.text
-            destinationController.players = Int(playersTextField.text!)
-            destinationController.date = datePicker.date
-            destinationController.time = timePicker.date
-            destinationController.location = locationTextField.text
+            destinationController.room = room
         }
     }
     

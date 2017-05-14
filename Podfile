@@ -8,7 +8,12 @@ target 'BoardGameClub' do
   # Pods for BoardGameClub
 	pod 'Firebase/Core'
 	pod 'Firebase/Auth'
-	pod ‘Firebase/Database’
+	pod 'Firebase/Database'
+	pod 'Firebase/Storage'
+	pod 'Firebase/Messaging'
+	pod 'FirebaseUI/Storage'
 	pod 'SVProgressHUD'
+	pod 'JSQMessagesViewController'
+	#pod 'JSQMessagesViewController', :git => 'https://github.com/jessesquires/JSQMessagesViewController.git', :branch => 'develop'
 
 end

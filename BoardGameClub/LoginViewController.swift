@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import FirebaseAuth
 import SVProgressHUD
 
 class LoginViewController: UIViewController {
@@ -15,13 +14,12 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var pwTextField: UITextField!
     
-    let userDefaults = UserDefaults.standard
-    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        emailTextField.text = ""
-        if let email = userDefaults.string(forKey: "email") {
+        if let email = UserDefaults.standard.string(forKey: "email") {
             emailTextField.text = email
+        } else {
+            emailTextField.text = ""
         }
 //        pwTextField.text = ""
     }
@@ -38,20 +36,16 @@ class LoginViewController: UIViewController {
         } else {
             view.endEditing(true)
             SVProgressHUD.show(withStatus: "登入中")
-            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: pwTextField.text!, completion: { (user, error) in
-                if error != nil {
-                    SVProgressHUD.dismiss()
-                    let alert = UIAlertController(title: "錯誤", message: error?.localizedDescription, preferredStyle: .alert)
-                    alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
-                    self.present(alert, animated: true, completion: nil)
-                } else {
+            Library.signIn(email: emailTextField.text!, password: pwTextField.text!, completion: { (isSucess, alert) in
+                if isSucess {
                     SVProgressHUD.showSuccess(withStatus: "登入成功")
                     SVProgressHUD.dismiss(withDelay: 1)
-                    self.userDefaults.set(self.emailTextField.text, forKey: "email")
-                    self.userDefaults.synchronize()
                     Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
                         self.performSegue(withIdentifier: "Login", sender: self)
                     })
+                } else {
+                    SVProgressHUD.dismiss()
+                    self.present(alert!, animated: true, completion: nil)
                 }
             })
         }

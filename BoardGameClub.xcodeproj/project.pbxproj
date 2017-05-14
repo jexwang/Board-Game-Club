@@ -8,19 +8,28 @@
 
 /* Begin PBXBuildFile section */
 		7E63103208B1848E10879321 /* Pods_BoardGameClub.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */; };
+		802578551EA729D200039CC2 /* EditRoomTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 802578541EA729D200039CC2 /* EditRoomTableViewController.swift */; };
 		80356B391E87D06900145B58 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80356B381E87D06900145B58 /* InformationViewController.swift */; };
 		80356B3B1E87E9FE00145B58 /* RoomDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80356B3A1E87E9FE00145B58 /* RoomDetailViewController.swift */; };
 		80601C281E86A376000AD27A /* ConfirmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80601C271E86A376000AD27A /* ConfirmViewController.swift */; };
 		806D83E41E8656C400021213 /* CreateRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 806D83E31E8656C400021213 /* CreateRoomViewController.swift */; };
+		8081C9C71E9E26BA00F3707D /* PlayerListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8081C9C61E9E26BA00F3707D /* PlayerListTableViewCell.swift */; };
+		8081C9C91E9EA06400F3707D /* InformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8081C9C81E9EA06400F3707D /* InformationTableViewController.swift */; };
 		808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 808E5DB51E82A22500A525AF /* AppDelegate.swift */; };
 		808E5DBD1E82A22500A525AF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBB1E82A22500A525AF /* Main.storyboard */; };
 		808E5DBF1E82A22500A525AF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DBE1E82A22500A525AF /* Assets.xcassets */; };
 		808E5DC21E82A22500A525AF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */; };
+		809178501E9A13910066E24B /* ChatRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8091784F1E9A13910066E24B /* ChatRoomViewController.swift */; };
 		809E7A031E8CE9E100C7B4A0 /* MapKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 809E7A021E8CE9E100C7B4A0 /* MapKit.framework */; };
 		809E7A051E8D055C00C7B4A0 /* InTheRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */; };
 		809E7A071E8D3C8300C7B4A0 /* Room.swift in Sources */ = {isa = PBXBuildFile; fileRef = 809E7A061E8D3C8300C7B4A0 /* Room.swift */; };
 		80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */; };
-		80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED51E82DFB100470C8F /* AppTemp.swift */; };
+		80E1CED61E82DFB100470C8F /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80E1CED51E82DFB100470C8F /* Library.swift */; };
+		80F5D7FF1E9B6EC900475143 /* EditRoomViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5D7FE1E9B6EC900475143 /* EditRoomViewController.swift */; };
+		80F5D8031E9B8B3F00475143 /* PlayerListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5D8021E9B8B3F00475143 /* PlayerListTableViewController.swift */; };
+		80F5D8051E9BA3C600475143 /* RoomInformationTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5D8041E9BA3C600475143 /* RoomInformationTableViewController.swift */; };
+		80F5D8071E9BB80C00475143 /* RoomManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F5D8061E9BB80C00475143 /* RoomManager.swift */; };
+		80F602531E9F6DCD00A52482 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F602521E9F6DCD00A52482 /* StorageManager.swift */; };
 		80F743121E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */; };
 		80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */; };
 		80FFE1E01E82B6320019D6AB /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */; };
@@ -31,21 +40,31 @@
 /* Begin PBXFileReference section */
 		1A0FAC0D3AA2CD944C328C90 /* Pods-BoardGameClub.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-BoardGameClub.release.xcconfig"; path = "Pods/Target Support Files/Pods-BoardGameClub/Pods-BoardGameClub.release.xcconfig"; sourceTree = "<group>"; };
 		5D4829C633E613BFB0187432 /* Pods_BoardGameClub.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_BoardGameClub.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		802578541EA729D200039CC2 /* EditRoomTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRoomTableViewController.swift; sourceTree = "<group>"; };
 		80356B381E87D06900145B58 /* InformationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		80356B3A1E87E9FE00145B58 /* RoomDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetailViewController.swift; sourceTree = "<group>"; };
 		80601C271E86A376000AD27A /* ConfirmViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfirmViewController.swift; sourceTree = "<group>"; };
 		806D83E31E8656C400021213 /* CreateRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateRoomViewController.swift; sourceTree = "<group>"; };
+		8081C9C61E9E26BA00F3707D /* PlayerListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListTableViewCell.swift; sourceTree = "<group>"; };
+		8081C9C81E9EA06400F3707D /* InformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InformationTableViewController.swift; sourceTree = "<group>"; };
 		808E5DB21E82A22500A525AF /* BoardGameClub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BoardGameClub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		808E5DB51E82A22500A525AF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		808E5DBC1E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		808E5DBE1E82A22500A525AF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		808E5DC11E82A22500A525AF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		808E5DC31E82A22500A525AF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8091784F1E9A13910066E24B /* ChatRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatRoomViewController.swift; sourceTree = "<group>"; };
 		809E7A021E8CE9E100C7B4A0 /* MapKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MapKit.framework; path = System/Library/Frameworks/MapKit.framework; sourceTree = SDKROOT; };
 		809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = InTheRoomViewController.swift; sourceTree = "<group>"; };
 		809E7A061E8D3C8300C7B4A0 /* Room.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Room.swift; sourceTree = "<group>"; };
+		80A03E9C1EB270CE008477CB /* BoardGameClub.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = BoardGameClub.entitlements; sourceTree = "<group>"; };
 		80E1CED31E82D5E300470C8F /* RoomListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewCell.swift; sourceTree = "<group>"; };
-		80E1CED51E82DFB100470C8F /* AppTemp.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppTemp.swift; sourceTree = "<group>"; };
+		80E1CED51E82DFB100470C8F /* Library.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
+		80F5D7FE1E9B6EC900475143 /* EditRoomViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditRoomViewController.swift; sourceTree = "<group>"; };
+		80F5D8021E9B8B3F00475143 /* PlayerListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerListTableViewController.swift; sourceTree = "<group>"; };
+		80F5D8041E9BA3C600475143 /* RoomInformationTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomInformationTableViewController.swift; sourceTree = "<group>"; };
+		80F5D8061E9BB80C00475143 /* RoomManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomManager.swift; sourceTree = "<group>"; };
+		80F602521E9F6DCD00A52482 /* StorageManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomDetailTableViewCell.swift; sourceTree = "<group>"; };
 		80FFE1DD1E82B4DD0019D6AB /* RoomListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoomListTableViewController.swift; sourceTree = "<group>"; };
 		80FFE1DF1E82B6320019D6AB /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
@@ -97,14 +116,18 @@
 		808E5DB41E82A22500A525AF /* BoardGameClub */ = {
 			isa = PBXGroup;
 			children = (
+				80A03E9C1EB270CE008477CB /* BoardGameClub.entitlements */,
 				808E5DB51E82A22500A525AF /* AppDelegate.swift */,
-				80E1CED51E82DFB100470C8F /* AppTemp.swift */,
 				809E7A061E8D3C8300C7B4A0 /* Room.swift */,
+				80F5D8061E9BB80C00475143 /* RoomManager.swift */,
+				80F602521E9F6DCD00A52482 /* StorageManager.swift */,
+				80E1CED51E82DFB100470C8F /* Library.swift */,
 				80FFE1E11E82B7760019D6AB /* Login */,
 				80E1CED01E82D57000470C8F /* RoomList */,
 				80F7430C1E8B914D00E6D70F /* RoomDetail */,
 				80636DB31E8514E8002BEE07 /* CreateRoom */,
 				80356B381E87D06900145B58 /* InformationViewController.swift */,
+				8081C9C81E9EA06400F3707D /* InformationTableViewController.swift */,
 				808E5DBB1E82A22500A525AF /* Main.storyboard */,
 				808E5DBE1E82A22500A525AF /* Assets.xcassets */,
 				808E5DC01E82A22500A525AF /* LaunchScreen.storyboard */,
@@ -129,6 +152,12 @@
 				80F743111E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift */,
 				80356B3A1E87E9FE00145B58 /* RoomDetailViewController.swift */,
 				809E7A041E8D055C00C7B4A0 /* InTheRoomViewController.swift */,
+				8091784F1E9A13910066E24B /* ChatRoomViewController.swift */,
+				8081C9C61E9E26BA00F3707D /* PlayerListTableViewCell.swift */,
+				80F5D8021E9B8B3F00475143 /* PlayerListTableViewController.swift */,
+				80F5D8041E9BA3C600475143 /* RoomInformationTableViewController.swift */,
+				80F5D7FE1E9B6EC900475143 /* EditRoomViewController.swift */,
+				802578541EA729D200039CC2 /* EditRoomTableViewController.swift */,
 			);
 			name = RoomDetail;
 			sourceTree = "<group>";
@@ -199,6 +228,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.Maps.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
 								enabled = 1;
 							};
 						};
@@ -293,15 +325,24 @@
 				80601C281E86A376000AD27A /* ConfirmViewController.swift in Sources */,
 				80FFE1E31E82B7960019D6AB /* LoginViewController.swift in Sources */,
 				80FFE1DE1E82B4DD0019D6AB /* RoomListTableViewController.swift in Sources */,
+				80F602531E9F6DCD00A52482 /* StorageManager.swift in Sources */,
 				80E1CED41E82D5E300470C8F /* RoomListTableViewCell.swift in Sources */,
 				80356B3B1E87E9FE00145B58 /* RoomDetailViewController.swift in Sources */,
 				808E5DB61E82A22500A525AF /* AppDelegate.swift in Sources */,
-				80E1CED61E82DFB100470C8F /* AppTemp.swift in Sources */,
+				80E1CED61E82DFB100470C8F /* Library.swift in Sources */,
+				809178501E9A13910066E24B /* ChatRoomViewController.swift in Sources */,
+				80F5D8051E9BA3C600475143 /* RoomInformationTableViewController.swift in Sources */,
+				8081C9C71E9E26BA00F3707D /* PlayerListTableViewCell.swift in Sources */,
 				806D83E41E8656C400021213 /* CreateRoomViewController.swift in Sources */,
+				80F5D8071E9BB80C00475143 /* RoomManager.swift in Sources */,
+				8081C9C91E9EA06400F3707D /* InformationTableViewController.swift in Sources */,
+				80F5D7FF1E9B6EC900475143 /* EditRoomViewController.swift in Sources */,
 				809E7A051E8D055C00C7B4A0 /* InTheRoomViewController.swift in Sources */,
 				80FFE1E51E82BC3B0019D6AB /* SignUpViewController.swift in Sources */,
 				80356B391E87D06900145B58 /* InformationViewController.swift in Sources */,
+				802578551EA729D200039CC2 /* EditRoomTableViewController.swift in Sources */,
 				80F743121E8BA7AD00E6D70F /* RoomDetailTableViewCell.swift in Sources */,
+				80F5D8031E9B8B3F00475143 /* PlayerListTableViewController.swift in Sources */,
 				809E7A071E8D3C8300C7B4A0 /* Room.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -424,6 +465,7 @@
 			baseConfigurationReference = FC00C56A6BA593521B9B0BA6 /* Pods-BoardGameClub.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BoardGameClub/BoardGameClub.entitlements;
 				DEVELOPMENT_TEAM = YD5TB6T2X8;
 				INFOPLIST_FILE = BoardGameClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -438,6 +480,7 @@
 			baseConfigurationReference = 1A0FAC0D3AA2CD944C328C90 /* Pods-BoardGameClub.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = BoardGameClub/BoardGameClub.entitlements;
 				DEVELOPMENT_TEAM = YD5TB6T2X8;
 				INFOPLIST_FILE = BoardGameClub/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

@@ -7,29 +7,48 @@
 //
 
 import UIKit
-import Firebase
+//import FirebaseDatabase
+import SVProgressHUD
 import MapKit
 
 class RoomDetailViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     @IBOutlet weak var roomDetailTableView: UITableView!
+    @IBOutlet weak var currentPlayerTableView: UITableView!
     @IBOutlet weak var mapView: MKMapView!
     
-    var roomKey: String!
-    var roomDict: Dictionary<String, AnyObject>!
-    var room: Room!
+    let rm = RoomManager.shareInstance()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        room = Room(createTime: roomDict["createTime"] as! TimeInterval, currentPlayer: roomDict["currentPlayer"] as! [String], game: roomDict["game"] as! String, location: roomDict["location"] as! String, name: roomDict["name"] as! String, ownerID: roomDict["ownerID"] as! String, players: roomDict["players"] as! Int, timePoint: roomDict["timePoint"] as! TimeInterval)
+        
+        rm.addRoomObserve { (alert) in
+            if alert != nil && alert!.message!.contains("移出") == false {
+                let alertAction = UIAlertAction(title: "確定", style: .default, handler: { _ in
+                    self.navigationController?.popViewController(animated: true)
+                })
+                alert!.addAction(alertAction)
+                self.present(alert!, animated: true, completion: nil)
+            } else {
+                self.roomDetailTableView.reloadData()
+                self.currentPlayerTableView.reloadData()
+                self.mapRefresh()
+            }
+        }
         
         roomDetailTableView.estimatedRowHeight = 44
         roomDetailTableView.rowHeight = UITableViewAutomaticDimension
         roomDetailTableView.tableFooterView = UIView(frame: CGRect.zero)
-        
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(true)
+        rm.removeRoomObserve()
+    }
+    
+    func mapRefresh() {
         let geoCoder = CLGeocoder()
-        geoCoder.geocodeAddressString(room.location) { (placemarks, error) in
+        geoCoder.geocodeAddressString(rm.getRoom().location) { (placemarks, error) in
             if error != nil {
                 print(error!)
                 return
@@ -58,13 +77,14 @@ class RoomDetailViewController: UIViewController, UITableViewDelegate, UITableVi
         case "RoomDetailTableView":
             return 6
         case "CurrentPlayerTableView":
-            return room.currentPlayer.count + 1
+            return rm.getRoom().currentPlayer.count + 1
         default:
             return 0
         }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let room = rm.getRoom()
         switch tableView.restorationIdentifier! {
         case "RoomDetailTableView":
             let cell = tableView.dequeueReusableCell(withIdentifier: "RoomDetailTableViewCell", for: indexPath) as! RoomDetailTableViewCell
@@ -80,10 +100,10 @@ class RoomDetailViewController: UIViewController, UITableViewDelegate, UITableVi
                 cell.contentLabel.text = "\(room.players)"
             case 3:
                 cell.titleLabel.text = "日期:"
-                cell.contentLabel.text = "\(AppTemp.convertDate(time: room.timePoint, DateMode: .Date))"
+                cell.contentLabel.text = "\(Library.convertDate(time: room.timePoint, DateMode: .Date))"
             case 4:
                 cell.titleLabel.text = "時間:"
-                cell.contentLabel.text = "\(AppTemp.convertDate(time: room.timePoint, DateMode: .Time))"
+                cell.contentLabel.text = "\(Library.convertDate(time: room.timePoint, DateMode: .Time))"
             case 5:
                 cell.titleLabel.text = "地點:"
                 cell.contentLabel.text = "\(room.location)"
@@ -96,7 +116,10 @@ class RoomDetailViewController: UIViewController, UITableViewDelegate, UITableVi
             if indexPath.row == 0 {
                 cell.textLabel?.text = "玩家列表: (\(room.currentPlayer.count)/\(room.players))"
             } else {
-                cell.textLabel?.text = room.currentPlayer[indexPath.row - 1]
+                let room = room.currentPlayer
+                Library.getUserInformation(uid: Array(room.keys)[indexPath.row - 1], completion: { (user) in
+                    cell.textLabel?.text = user["nickname"] as? String
+                })
             }
             return cell
         default:
@@ -105,19 +128,31 @@ class RoomDetailViewController: UIViewController, UITableViewDelegate, UITableVi
     }
     
     @IBAction func joinButton(_ sender: UIBarButtonItem) {
+        let room = rm.getRoom()
         if room.currentPlayer.count < room.players {
-            let ref = FIRDatabase.database().reference().child("room").child(roomKey).child("currentPlayer")
-            ref.updateChildValues(["\(room.currentPlayer.count)" : FIRAuth.auth()!.currentUser!.email!], withCompletionBlock: { (error, ref) in
-                if error != nil {
-                    print(error!)
+            SVProgressHUD.show(withStatus: "加入中")
+            let randomSecond: TimeInterval = Double(arc4random_uniform(20)) * 0.1 + 1
+            Timer.scheduledTimer(withTimeInterval: randomSecond, repeats: false, block: { _ in
+                if room.currentPlayer.count < room.players {
+                    self.rm.joinRoom(completion: { (alert) in
+                        if alert != nil {
+                            SVProgressHUD.dismiss()
+                            self.present(alert!, animated: true, completion: nil)
+                        } else {
+                            SVProgressHUD.showSuccess(withStatus: "加入成功")
+                            SVProgressHUD.dismiss(withDelay: 1)
+                            Timer.scheduledTimer(withTimeInterval: 1, repeats: false, block: { _ in
+                                self.performSegue(withIdentifier: "Join", sender: self)
+                            })
+                        }
+                    })
                 } else {
-                    self.performSegue(withIdentifier: "Join", sender: self)
+                    SVProgressHUD.dismiss()
+                    self.present(Library.alert(message: "遊戲人數已滿", needButton: true), animated: true, completion: nil)
                 }
             })
         } else {
-            let alert = UIAlertController(title: "錯誤", message: "遊戲人數已滿", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "確定", style: .cancel, handler: nil))
-            present(alert, animated: true, completion: nil)
+            present(Library.alert(message: "遊戲人數已滿", needButton: true), animated: true, completion: nil)
         }
     }
 

@@ -10,21 +10,21 @@ import Foundation
 
 class Room {
     var createTime: TimeInterval
-    var currentPlayer: [String]
+    var currentPlayer: Dictionary<String, String>
     var game: String
     var location: String
     var name: String
-    var ownerID: String
+    var ownerId: String
     var players: Int
     var timePoint: TimeInterval
     
-    init(createTime: TimeInterval, currentPlayer: [String], game: String, location: String, name: String, ownerID: String, players: Int, timePoint: TimeInterval) {
+    init(createTime: TimeInterval = 1, currentPlayer: Dictionary<String, String> = ["playerUid" : "playerEmail"], game: String = "game", location: String = "Taiwan", name: String = "name", ownerId: String = "onwerId", players: Int = 1, timePoint: TimeInterval = 1) {
         self.createTime = createTime
         self.currentPlayer = currentPlayer
         self.game = game
         self.location = location
         self.name = name
-        self.ownerID = ownerID
+        self.ownerId = ownerId
         self.players = players
         self.timePoint = timePoint
     }
